@@ -1,19 +1,96 @@
-/* This is ALL that should be in your style.css file */
+/* Modern CSS Variables for Theming */
+:root {
+  /* Light Theme */
+  --color-text: #1e293b;
+  --color-bg: #ffffff;
+  --color-primary: #2563eb;
+  --color-border: #e2e8f0;
+  
+  /* Spacing */
+  --max-width: 800px;
+  --padding: 2rem;
+}
+
+[data-theme="dark"] {
+  /* Dark Theme */
+  --color-text: #e2e8f0;
+  --color-bg: #0f172a;
+  --color-primary: #3b82f6;
+  --color-border: #334155;
+}
+
+/* Base Styles */
 body {
-  font-family: 'Inter', sans-serif;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
-  transition: background 0.3s ease; /* For dark mode */
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  transition: color 0.3s ease, background-color 0.3s ease;
+  
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--padding);
 }
 
-h1 { 
-  color: #2563eb; 
+/* Typography */
+h1, h2, h3 {
+  line-height: 1.2;
+  margin-bottom: 0.75em;
 }
 
-/* Dark mode styles */
-body.dark-mode {
-  background: #0f172a;
-  color: #e2e8f0;
+h1 {
+  color: var(--color-primary);
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* Sections */
+section {
+  margin-bottom: 3rem;
+}
+
+/* Projects */
+.project {
+  border-left: 3px solid var(--color-primary);
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.skills-grid span {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
 }
