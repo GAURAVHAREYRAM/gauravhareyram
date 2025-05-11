@@ -1,0 +1,19 @@
+/* This is ALL that should be in your style.css file */
+body {
+  font-family: 'Inter', sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  line-height: 1.6;
+  transition: background 0.3s ease; /* For dark mode */
+}
+
+h1 { 
+  color: #2563eb; 
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background: #0f172a;
+  color: #e2e8f0;
+}
