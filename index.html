@@ -1,38 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gaurav Singh | Data Scientist</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Preload Inter font (like Rudra's site) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-  
-<script>
-  const toggle = document.querySelector('.dark-mode-toggle');
-  toggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-  });
-</script>
 <body>
-  <button class="dark-mode-toggle">Toggle Dark/Light</button>
- 
-  <section id="home">
-    <h1>Hi, I'm Gaurav Singh.</h1>
-    <p>I analyze data and build ML models.</p>
-  </section>
+  <button class="dark-mode-toggle" aria-label="Toggle dark mode">🌓</button>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About</h2>
-    <p>Hardworking Data Science student at IIT Madras with expertise in Python, SQL, and Machine Learning.</p>
-    <!-- Add your SKILLS here -->
-  </section>
+  <main>
+    <!-- Hero Section -->
+    <section id="home">
+      <h1>Hi, I'm Gaurav Singh.</h1>
+      <p>I analyze data and build ML models.</p>
+    </section>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>Predictive Analysis at Capillary</h3>
-      <p>Built ML models to forecast customer behavior.</p>
-    </div>
-  </section>
+    <!-- About Section -->
+    <section id="about">
+      <h2>About</h2>
+      <p>Hardworking Data Science student at IIT Madras with expertise in Python, SQL, and Machine Learning.</p>
+      
+      <div class="skills-grid">
+        <span>Python</span>
+        <span>Machine Learning</span>
+        <span>SQL</span>
+        <!-- Add all your skills here -->
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <article class="project">
+        <h3>Predictive Analysis at Capillary</h3>
+        <p>Built ML models to forecast customer behavior.</p>
+      </article>
+    </section>
+  </main>
+
+  <!-- JavaScript at bottom for better loading -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.querySelector('.dark-mode-toggle');
+      
+      // Set initial mode based on preference
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark-mode');
+      }
+      
+      // Toggle functionality
+      toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+      });
+    });
+  </script>
 </body>
 </html>
